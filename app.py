@@ -42,7 +42,7 @@ with st.sidebar:
     st.title("⚙️ Settings")
     api_key = st.text_input("Enter OpenAI API Key", type="password")
     model_choice = st.selectbox("LLM Engine", ["gpt-4o", "gpt-4-turbo"])
-    st.info("This prototype simulates Biocode's FydoDx workflow for human clinical trials.")
+    #st.info("This prototype simulates Biocode's FydoDx workflow for human clinical trials.")
 
 # --- APP HEADER ---
 st.title("🏥 MediScribe AI: Ambient Clinical Intelligence")
