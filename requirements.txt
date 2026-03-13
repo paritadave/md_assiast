@@ -3,3 +3,4 @@ openai
 langchain
 langchain-openai
 python-dotenv
+langchain-core
