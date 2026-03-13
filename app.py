@@ -1,5 +1,24 @@
-import streamlit as st
 import os
+import streamlit as st
+
+def get_api_key():
+    # 1. Check Streamlit Cloud Secrets (Production)
+    if "OPENAI_API_KEY" in st.secrets:
+        return st.secrets["OPENAI_API_KEY"]
+    
+    # 2. Check Conda/System Environment Variables (Local Development)
+    local_key = os.getenv("OPENAI_API_KEY")
+    if local_key:
+        return local_key
+    
+    return None
+
+api_key = get_api_key()
+
+if not api_key:
+    st.error("OpenAI API Key not found. Please set it in your Conda env or Streamlit Secrets.")
+#import streamlit as st
+#import os
 from openai import OpenAI
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
